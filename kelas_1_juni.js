@@ -116,21 +116,4 @@
 
 let arr = [1, 2, 0, -1, -1]
 // arr = arr.join('')   
-let min = 0
-let max = 0
-let equal = 0
-let result = 0
-for (let i = 0; i <= arr.length; i++) {
-    if (arr[i] > 0) {
-        max++
-    }
-    if (arr[i] < 0) {
-        min++
-    }
-    if (arr[i] === 0) {
-        equal++
-    }
-}
-console.log(equal / arr.length)
-console.log(max / arr.length)
-console.log(min / arr.length)
+let baru = 'latian git'
