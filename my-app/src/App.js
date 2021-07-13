@@ -1,28 +1,65 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import Gambar from './Gambar';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      bg: "white",
+      inputan: ""
+    }
+
+    this.handleInputan = this.handleInputan.bind(this)
+    this.gantiWarnaBg = this.gantiWarnaBg.bind(this)
+  }
+
+  handleInputan(e) {
+    this.setState({ inputan: e.target.value }, this.gantiWarnaBg)
+  }
+
+  gantiWarnaBg() {
+    this.setState({ bg: this.state.inputan })
+  }
+
+  render() {
+    return (
+      <div style={{ backgroundColor: this.state.bg, width: "100%", height: "100vh" }}>
+        {/* <input
+          value={this.state.inputan}
+          onChange={this.handleInputan}
+        /> */}
+        <button
+          onClick={this.gantiWarnaBg}
         >
-          Learn React
-        </a>
-        <p>
-          Hallo anjing
-        </p>
-      </header>
-    </div>
-  );
+          ganti warna
+        </button>
+        <Gambar
+          dariParent={this.handleInputan}
+          valueInputan={this.state.inputan}
+        />
+        <Gambar
+          dariParent={this.handleInputan}
+          valueInputan={this.state.inputan}
+        />
+        <Gambar
+          dariParent={this.handleInputan}
+          valueInputan={this.state.inputan}
+        />
+        <Gambar
+          dariParent={this.handleInputan}
+          valueInputan={this.state.inputan}
+        />
+        <Gambar
+          dariParent={this.handleInputan}
+          valueInputan={this.state.inputan}
+        />
+        <Gambar
+          dariParent={this.handleInputan}
+          valueInputan={this.state.inputan}
+        />
+      </div>
+    );
+  }
 }
 
 export default App;
