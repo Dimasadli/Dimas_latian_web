@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.navbar{
+    padding: 0;
+}
+
+.username{
+    display: flex;
+
+}
+.username div:nth-of-type(2){
+    width: 32px;
+    height: 32px;
+    margin: 0;
+}
+
+.username div:nth-of-type(2) img{
+    width: 100%;
+    height: 100%;
+}
+
+.container-fluid li p{
+    margin: 0 20px;
+    color: black;
+    width: 68px;
+    height: 19px;
+    font-size: 14px;
+}
+
+.container-fluid li:nth-of-type(2) p{
+    font-size: 10px;
+    width: 72px;
+    height: 14px;
+}
+
+.container-fluid #logo{
+    width: 129px;
+    height: 32px;
+    margin: 17px 0 0 34px;
+}
+
+.container-fluid{
+    color: white;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+}
