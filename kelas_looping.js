@@ -149,20 +149,20 @@
 //     { "apple": 1, "bat": 2 }))
 
 
-// baru 2D
-let huruf = [[1, 2, 3, 4], 'efgh', 'ijkl', 'mnop']
-let arr = []
-let result = []
-for (let a = 0; a < huruf.length; a++) {
-    arr.push([])
-}
+// // baru 2D
+// let huruf = [[1, 2, 3, 4], 'efgh', 'ijkl', 'mnop']
+// let arr = []
+// let result = []
+// for (let a = 0; a < huruf.length; a++) {
+//     arr.push([])
+// }
 
-for (var i = 0; i < huruf.length; i++) {
-    for (var j = 0; j < huruf[i].length; j++) {
-        arr[i].push(huruf[j][i])
-    };
-};
-console.log(arr)
+// for (var i = 0; i < huruf.length; i++) {
+//     for (var j = 0; j < huruf[i].length; j++) {
+//         arr[i].push(huruf[j][i])
+//     };
+// };
+// console.log(arr)
 
 // for (var i = 0; i < arr.length; i++) {
 //     result.push(arr[i].join(''))
