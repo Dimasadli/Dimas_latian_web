@@ -8,12 +8,13 @@ class Person {
         const namaLocal = nama
     }
 
-    spinWords(word) {
-        console.log(`${this.nama} pergi ke bulan`)
+    _spinNameWords() {
+        console.log(`call spinword`)
+        return this.nama.split('').reverse().join('')
     }
 
     solvePalindrome(sentence) {
-        const spinnedWord = this.spinWords()
+        const spinnedWord = this._spinNameWords()
         return sentence === spinnedWord
     }
 }
@@ -21,4 +22,5 @@ class Person {
 const farhan = new Person("Farhan", 94, 14, "L");
 const rifqi = new Person("Rifqi", 12, 8, "Laki laki");
 
-farhan.methodLain()
+console.log(farhan.spinNameWords())
+
