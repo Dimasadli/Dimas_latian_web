@@ -150,19 +150,19 @@
 
 
 // baru 2D
-let huruf = [[1, 2, 3, 4], 'efgh', 'ijkl', 'mnop']
-let arr = []
-let result = []
-for (let a = 0; a < huruf.length; a++) {
-    arr.push([])
-}
+// let huruf = [[1, 2, 3, 4], 'efgh', 'ijkl', 'mnop']
+// let arr = []
+// let result = []
+// for (let a = 0; a < huruf.length; a++) {
+//     arr.push([])
+// }
 
-for (var i = 0; i < huruf.length; i++) {
-    for (var j = 0; j < huruf[i].length; j++) {
-        arr[i].push(huruf[j][i])
-    };
-};
-console.log(arr)
+// for (var i = 0; i < huruf.length; i++) {
+//     for (var j = 0; j < huruf[i].length; j++) {
+//         arr[i].push(huruf[j][i])
+//     };
+// };
+// console.log(arr)
 
 // for (var i = 0; i < arr.length; i++) {
 //     result.push(arr[i].join(''))
@@ -247,3 +247,59 @@ console.log(arr)
 
 
 // console.log(transpose([[1, 2, 3], [4, 5, 6]]))
+
+
+
+let huruf = 'abcd\nefgh\nijkl\nmnop'
+
+function rot90Clock(huruf) {
+    // your code
+    let diagonal = diag1Sym(huruf);
+    diagonal = diagonal.split('\n')
+    let result = []
+    for (let i = 0; i < diagonal.length; i++) {
+        result.push(diagonal[i].split('').reverse().join(''))
+    }
+    return result.join('\n')
+}
+
+
+function diag1Sym(huruf) {
+    // your code
+    let newHuruf = huruf.split('\n')
+    let arr = []
+    let result = []
+
+    for (let a = 0; a < newHuruf.length; a++) {
+        arr.push([])
+    }
+
+    for (var i = 0; i < newHuruf.length; i++) {
+        for (var j = 0; j < newHuruf[i].length; j++) {
+            arr[i].push(newHuruf[j][i])
+        };
+    };
+
+    for (var i = 0; i < arr.length; i++) {
+        result.push(arr[i].join(''))
+    };
+
+    return result.join('\n')
+}
+
+function selfieAndDiag1(huruf) {
+    // your code
+    let diagonal = diag1Sym(huruf)
+    diagonal = diagonal.split('\n')
+    let result = []
+    let newHuruf = huruf.split('\n')
+    for (let i = 0; i < diagonal.length; i++) {
+        result.push(newHuruf[i] + '|' + diagonal[i])
+    }
+    return result.join('\n')
+}
+
+console.log(selfieAndDiag1(huruf))
+
+
+
