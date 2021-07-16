@@ -57,6 +57,9 @@ class App extends Component {
           dariParent={this.handleInputan}
           valueInputan={this.state.inputan}
         />
+        <div>
+          <h1>Hello</h1>
+        </div>
       </div>
     );
   }
