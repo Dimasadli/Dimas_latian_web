@@ -24,15 +24,15 @@ class App extends Component {
   render() {
     return (
       <div style={{ backgroundColor: this.state.bg, width: "100%", height: "100vh" }}>
-        {/* <input
-          value={this.state.inputan}
-          onChange={this.handleInputan}
-        /> */}
         <button
           onClick={this.gantiWarnaBg}
         >
           ganti warna
         </button>
+        <input
+          value={this.state.inputan}
+          onChange={this.handleInputan}
+        />
         <Gambar
           dariParent={this.handleInputan}
           valueInputan={this.state.inputan}
