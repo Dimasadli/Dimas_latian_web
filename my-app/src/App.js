@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import Gambar from './Gambar';
+// import Gambar from './Gambar';
+import TestProps from './TestProps';
+import data from './table'
+import Button from './Button';
 
 class App extends Component {
   constructor(props) {
@@ -22,9 +25,10 @@ class App extends Component {
   }
 
   render() {
+
     return (
       <div style={{ backgroundColor: this.state.bg, width: "100%", height: "100vh" }}>
-        <button
+        {/* <button
           onClick={this.gantiWarnaBg}
         >
           ganti warna
@@ -56,10 +60,52 @@ class App extends Component {
         <Gambar
           dariParent={this.handleInputan}
           valueInputan={this.state.inputan}
-        />
-        <div>
+        /> */}
+
+        {/* <TestProps 
+          variabelText="Hellowod"
+          var2="testes"
+          contohArr={data}
+          firstName={data[0].first_name}
+        >
+          <button>COntoh button</button>
+          <button>COntoh button</button>
+          <button>COntoh button</button>
+        </TestProps> */}
+
+        {/* <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              data.map(el => {
+                return (
+                  <tr>
+                    <td>{el.first_name}</td>
+                    <td>{el.first_name}</td>
+                    <td>{el.first_name}</td>
+                    <td>{el.first_name}</td>
+                    <td><img src={el.avatar} alt="" /></td>
+                  </tr>
+                )
+              })
+            }
+          </tbody>
+        </table> */}
+
+        {/* <Button id="button1" className="customClass">1234</Button> */}
+
+
+
+        {/* <div>
           <h1>Hello</h1>
-        </div>
+        </div> */}
       </div>
     );
   }
