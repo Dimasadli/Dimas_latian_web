@@ -111,36 +111,25 @@
 //     console.log("\n")
 // }
 
-// alert('Tebak angka dari 1-10:')
 
-// let comp = Math.floor(Math.random() * 11);
-// let player = prompt('Masukkan angka magic anda')
-// let tanya = true
-// let hasil = ''
-
-// while (tanya) {
-//     for (let i = 2; i >= 0; i--) {
-//         if (player == comp && i <= 3)
-//     }
-// }
 // function whatIsInAName(collection, source) {
 //     var arr = [];
 //     // Only change code below this line
 //     let keys = Object.keys(source)
-//     const hasil = collection.filter(obj => {
+//     // console.log(keys)
+//     const hasil = collection.forEach((obj) => {
 //         let temp = []
-//         keys.every(key => {
-//             if (obj[key]===source[key]){
-//                 console.log(obj[key])
+//         keys.forEach((key) => {
+//             if (obj[key] === source[key]) {
+//                 temp.push(obj)
 //             }
 //         })
-//         // return obj
+//         if (temp.length >= keys.length) {
+//             arr.push(obj)
+//         }
 //     })
-
-//     // Only change code above this line
-//     // console.log(hasil);
+//     return arr
 // }
-
 
 // console.log(whatIsInAName([
 //     { "apple": 1, "bat": 2 },
@@ -429,38 +418,52 @@
 
 
 /// longest consecutive alphabet
-const str = 'tdfdffddffsdsfffffsdsdsddddd';
-const findConsecutiveCount = (str = '') => {
-    // let res = '';
-    // let count = 1;
-    // let arr = []
-    // for (let i = 0; i < str.length; i++) {
-    //     if (str[i] === str[i + 1]) {
-    //         count++
-    //     } else {
-    //         if (arr.every(v => v < count)) {
-    //             res = str[i] + count
-    //         }
-    //         arr.push(count)
-    //         count = 1
-    //     }
-    // }
-    // return !res ? ['', 0] : [res.slice(0, 1), res.slice(1) * 1];
-    let max = 0
-    let currentMax = 1
-    let temp = ''
-    for (let i = 0; i < str.length; i++) {
-        if (str[i] === str[i + 1]) {
-            currentMax++
-        }
-        else {
-            max = Math.max(max, currentMax)
-            currentMax = 1
-        }
-    }
-    return max
-};
-console.log(findConsecutiveCount(str));
+// const str = 'tdfdffddffsdsfffffsdsdsddddd';
+// const findConsecutiveCount = (str = '') => {
+//     // let res = '';
+//     // let count = 1;
+//     // let arr = []
+//     // for (let i = 0; i < str.length; i++) {
+//     //     if (str[i] === str[i + 1]) {
+//     //         count++
+//     //     } else {
+//     //         if (arr.every(v => v < count)) {
+//     //             res = str[i] + count
+//     //         }
+//     //         arr.push(count)
+//     //         count = 1
+//     //     }
+//     // }
+//     // return !res ? ['', 0] : [res.slice(0, 1), res.slice(1) * 1];
+//     let max = 0
+//     let currentMax = 1
+//     let tempChar = []
+//     for (let i = 0; i < str.length; i++) {
+//         if (str[i] === str[i + 1]) {
+//             if (!tempChar) {
+//                 tempChar = str[i]
+//             }
+//             if (!currentMax) {
+//                 currentMax = 1
+//             }
+//             else {
+//                 currentMax++
+//             }
+//             if (max < currentMax) {
+//                 max = currentMax
+//                 tempChar = [str[i]]
+//             }
+//             else if (max === currentMax) {
+//                 tempChar.push(str[i])
+//             }
+//         }
+//         else {
+//             currentMax = 1
+//         }
+//     }
+//     return [max, tempChar]
+// };
+// console.log(findConsecutiveCount(str));
 
 
 
@@ -484,4 +487,96 @@ console.log(findConsecutiveCount(str));
 //     return longStr;
 // }
 // console.log(longestConsec(arr, num));
+
+
+// let arr = [1, 2]
+// let i = 0
+// let value = 0
+// while (value < 4000000) {
+//     value = arr[i] + arr[i + 1]
+//     i++
+//     if (value < 4000000) {
+//         arr.push(value)
+//     }
+// }
+// console.log(arr)
+
+// let result = arr
+// let total = 0
+// result.forEach(el => {
+//     if (el % 2 === 0) {
+//         total += el
+//     }
+// })
+
+// console.log(total)
+
+
+//// itemku no.1 
+// const contohArr = [
+//     "Enter uid1234 Muzi",
+//     "Change uid1234 Prodo",
+//     "Leave uid1234",
+//     "Enter uid1234 Ryan",
+//     "Leave uid1234"
+// ]
+// let array = []
+// let resObj = {}
+
+// contohArr.forEach(el => {
+//     const [condition, id, ...nama] = el.split(' ')
+//     if (condition === 'Enter') {
+//         array.push(id + ' came in')
+//         resObj[id] = nama
+//     }
+//     else if (condition === 'Leave') {
+//         array.push(id + ' has left')
+//         resObj[el] = nama
+//     }
+//     else if (condition === 'Change') {
+//         resObj[id] = nama
+//     }
+
+// })
+// console.log(resObj)
+// array = array.map(el => {
+//     const [id, ...condition] = el.split(' ')
+//     return resObj[id] + ' ' + condition
+// })
+
+// console.log(array)
+
+
+// function pairElement(str) {
+//     const strArr = str.split('')
+//     let objPair = {
+//         A: 'T',
+//         T: 'A',
+//         G: 'C',
+//         C: 'G'
+//     }
+//     return strArr.map(el => {
+//         return [el, objPair[el]]
+//     });
+// }
+
+// console.log(pairElement("GCG"));
+
+function fearNotLetter(str) {
+    let compare = []
+    let strSource = str.split('').map(el => {
+        return el.charCodeAt(0)
+    })
+    const hurufAwal = str.charCodeAt(0)
+    const hurufAkhir = str.charCodeAt(str.length - 1)
+
+    for (let i = hurufAwal; i <= hurufAkhir; i++) {
+        compare.push(i)
+    }
+    let hilang = compare.filter((el) => !strSource.includes(el))
+
+    return String.fromCharCode(hilang.join(''))
+}
+
+console.log(fearNotLetter("abce"))
 
