@@ -1,7 +1,11 @@
 
 
 const contohArr = [
-    "Enter uid1234 Muzi", "Change uid1234 Prodo", "Leave uid1234", "Enter uid1234 Ryan", "Leave uid1234"
+    "Enter uid1234 Muzi",
+    "Enter uid4567 Prodo",
+    "Leave uid1234",
+    "Enter uid1234 Prodo",
+    "Change uid4567 Ryan"
 ]
 
 function itemku1(contohArr) {

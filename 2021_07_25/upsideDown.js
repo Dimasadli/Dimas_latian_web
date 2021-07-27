@@ -9,8 +9,8 @@ function solve(x, y) {
 function isUpsideDown(number) {
     const upsideable = '018'
     const numberable = '01869'
-    for(let i = 0; i < number.toString().length; i++) {
-        if(numberable.indexOf(number.toString()[i]) < 0) {
+    for (let i = 0; i < number.toString().length; i++) {
+        if (numberable.indexOf(number.toString()[i]) < 0) {
             return false
         }
     }

@@ -115,5 +115,4 @@
 //     </form>`
 
 let arr = [1, 2, 0, -1, -1]
-// arr = arr.join('')   
-let baru = 'latian git'
+// arr = arr.join('')

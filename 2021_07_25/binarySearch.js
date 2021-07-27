@@ -2,3 +2,24 @@ const arr = [131, 160, 212, 235, 397, 468, 591, 607, 720, 777, 868, 1051, 1183, 
 
 // dapetin 93233
 // ada di index berapa, berapa kali langkah pencarian
+
+
+const tujuan = 93233
+let current = arr[0]
+let awal = 0
+let akhir = arr.length - 1
+let tengah = Math.floor((awal + akhir) / 2)
+let i = 0
+
+while (tujuan !== current || Math.floor((akhir - awal) / 2) > 0) {
+    if (arr[tengah] < tujuan) {
+        akhir = tengah
+    }
+    else if (arr[tengah] > tujuan) {
+        awal = tengah
+    }
+    tengah = Math.floor((awal + akhir) / 2)
+    console.log(tengah)
+}
+
+console.log(tengah)

@@ -18,7 +18,7 @@
 // let baru = ''
 // for (let i = 0; i < arr.length; i++) {
 //     for (let j = 0; j < arr.length; j++) {
-//         // console.log(arr[i], arr[j])
+//         console.log(i, arr[j])
 //     }
 // }
 
@@ -161,32 +161,6 @@
 
 
 
-
-
-// let arr2 = []
-// let arr3 = []
-// let arr4 = []
-// for (let i = 0, j = 0; i < huruf.length; i++) {
-//     arr.push(huruf[i][j])
-// }
-// arr = arr.join('')
-// for (let i = 0, j = 1; i < huruf.length; i++) {
-//     arr2.push(huruf[i][j])
-// }
-// arr2 = arr2.join('')
-// for (let i = 0, j = 2; i < huruf.length; i++) {
-//     arr3.push(huruf[i][j])
-// }
-// arr3 = arr3.join('')
-
-// for (let i = 0, j = 3; i < huruf.length; i++) {
-//     arr4.push(huruf[i][j])
-// }
-// arr4 = arr4.join('')
-// let result = arr + ' ' + arr2 + ' ' + arr3 + ' ' + arr4
-// console.log(result.split(' '))
-
-
 // unpas 
 // let arr = ['Dimas', 'Samid', 'Anas']
 // function tambahPenumpang(nama, arr) {
@@ -289,29 +263,30 @@
 // let huruf = 'abcd\nefgh\nijkl\nmnop'
 
 // function rot(huruf) {
-//     // your code
-//     huruf = huruf.split('\n')
-//     ////// cara mudah ***
-//     // let result = huruf.reverse().join('\n')
-//     // console.log(result)
+    //     // your code
+    // huruf = huruf.split('\n')
+    //     ////// cara mudah ***
+    // let result = huruf.reverse().join('\n')
+    // console.log(result)
 
-//     ////// cara susah ***
-//     let arr = []
-//     for (let a = 0; a < huruf[0].length; a++) {
-//         arr.push([])
-//     }
+    //     ////// cara susah ***
+    // let arr = []
+    // for (let a = 0; a < huruf[0].length; a++) {
+    //     arr.push([])
+    // }
 
-//     for (let i = 0; i < huruf.length; i++) {
-//         for (let j = 0; j < huruf[i].length; j++) {
-//             arr[i].push(huruf[huruf.length - 1 - i][huruf[j].length - 1 - j])
-//         }
-//     }
-//     let result = []
-//     for (let i in arr) {
-//         result.push(arr[i].join(''))
-//     }
-//     return result.join('\n')
+    // for (let i = 0; i < huruf.length; i++) {
+    //     for (let j = 0; j < huruf[i].length; j++) {
+    //         arr[i].push(huruf[huruf.length - 1 - i][huruf.length - 1 - j])
+    //     }
+    // }
+    // let result = []
+    // for (let i in arr) {
+    //     result.push(arr[i].join(''))
+    // }
+    // return result.join('\n')
 // }
+// console.log(rot(huruf))
 
 // function selfieAndRot(huruf) {
 //     // your code
@@ -562,21 +537,21 @@
 
 // console.log(pairElement("GCG"));
 
-function fearNotLetter(str) {
-    let compare = []
-    let strSource = str.split('').map(el => {
-        return el.charCodeAt(0)
-    })
-    const hurufAwal = str.charCodeAt(0)
-    const hurufAkhir = str.charCodeAt(str.length - 1)
+// function fearNotLetter(str) {
+//     let compare = []
+//     let strSource = str.split('').map(el => {
+//         return el.charCodeAt(0)
+//     })
+//     const hurufAwal = str.charCodeAt(0)
+//     const hurufAkhir = str.charCodeAt(str.length - 1)
+//     for (let i = hurufAwal; i <= hurufAkhir; i++) {
+//         compare.push(i)
+//     }
+//     let hilang = compare.filter((el) => !strSource.includes(el))
+//     return String.fromCharCode(hilang.join(''))
+// }
 
-    for (let i = hurufAwal; i <= hurufAkhir; i++) {
-        compare.push(i)
-    }
-    let hilang = compare.filter((el) => !strSource.includes(el))
+// console.log(fearNotLetter("abce"))
 
-    return String.fromCharCode(hilang.join(''))
-}
-
-console.log(fearNotLetter("abce"))
+// console.log("Hello World ".replace(/ /g, ""))
 

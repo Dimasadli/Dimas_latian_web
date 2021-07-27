@@ -1,3 +1,5 @@
+// import { func, string } from "prop-types";
+
 class Person {
     constructor(nama, umur, jumlahKaki, jenisKelamin) {
         this.nama = nama;
@@ -72,10 +74,22 @@ class Color {
     }
 }
 
-const color1 = new Color(100, 30, 50, ['Dimas', 'Anas'])
+const color1 = new Color(100, 30, 50,)
 
 console.log(color1)
 console.log(color1.rgb())
 console.log(color1.hex())
 console.log(color1.hsl())
 
+class Reversed {
+    constructor(str) {
+        this.str = str
+    }
+    spinnedWord() {
+        let spin = this.str
+        return spin.split('').reverse().join('')
+    }
+}
+
+const coba = new Reversed('Dimas')
+console.log(coba.spinnedWord())

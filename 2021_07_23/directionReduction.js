@@ -1,31 +1,34 @@
-function dirReduc(arr){
+let test = ["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]
+
+function dirReduc(arr) {
   var lastDir;
   var newArr = []
   var popped;
-  arr.forEach(function(curDir){
-    if(curDir == 'NORTH'){
-      if(lastDir == 'SOUTH'){
-        popped = newArr.pop()
-      } 
-    } else if(curDir == 'SOUTH'){
-      if(lastDir == 'NORTH'){
+  arr.forEach(function (curDir) {
+    if (curDir == 'NORTH') {
+      if (lastDir == 'SOUTH') {
         popped = newArr.pop()
       }
-    } else if(curDir == 'EAST'){
-      if(lastDir == 'WEST'){
+    } else if (curDir == 'SOUTH') {
+      if (lastDir == 'NORTH') {
         popped = newArr.pop()
       }
-    } else if(curDir == 'WEST'){
-      if(lastDir == 'EAST'){
+    } else if (curDir == 'EAST') {
+      if (lastDir == 'WEST') {
+        popped = newArr.pop()
+      }
+    } else if (curDir == 'WEST') {
+      if (lastDir == 'EAST') {
         popped = newArr.pop()
       }
     }
-    
-    if(!popped){
+    if (!popped) {
       newArr.push(curDir)
     }
     popped = undefined;
-    lastDir = newArr[newArr.length-1]
+    lastDir = newArr[newArr.length - 1]
   })
   return newArr
 }
+
+console.log(dirReduc(test))

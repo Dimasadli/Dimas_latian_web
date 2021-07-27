@@ -73,13 +73,13 @@ class App extends Component {
           <button>COntoh button</button>
         </TestProps> */}
 
-        {/* <table>
+        <table>
           <thead>
             <tr>
-              <th></th>
-              <th></th>
-              <th></th>
-              <th></th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Company</th>
+              <th>Email</th>
             </tr>
           </thead>
           <tbody>
@@ -88,16 +88,16 @@ class App extends Component {
                 return (
                   <tr>
                     <td>{el.first_name}</td>
-                    <td>{el.first_name}</td>
-                    <td>{el.first_name}</td>
-                    <td>{el.first_name}</td>
+                    <td>{el.last_name}</td>
+                    <td>{el.company_name}</td>
+                    <td>{el.email}</td>
                     <td><img src={el.avatar} alt="" /></td>
                   </tr>
                 )
               })
             }
           </tbody>
-        </table> */}
+        </table>
 
         {/* <Button id="button1" className="customClass">1234</Button> */}
 
