@@ -9,11 +9,13 @@ class App extends Component {
     super(props);
     this.state = {
       bg: "white",
-      inputan: ""
+      inputan: "",
+      angka: 1,
     }
 
     this.handleInputan = this.handleInputan.bind(this)
     this.gantiWarnaBg = this.gantiWarnaBg.bind(this)
+    this.tambahAngka = this.tambahAngka.bind(this)
   }
 
   handleInputan(e) {
@@ -24,10 +26,24 @@ class App extends Component {
     this.setState({ bg: this.state.inputan })
   }
 
+  tambahAngka(event) {
+    this.setState({ angka: this.state.angka + 1 })
+    this.setState({ bg: this.state.inputan })
+  }
+
+  tambahAngkaArrow = (event) => {
+    this.setState({ angka: this.state.angka + 1 })
+  }
+
   render() {
 
     return (
       <div style={{ backgroundColor: this.state.bg, width: "100%", height: "100vh" }}>
+        <button
+          onClick={this.tambahAngka}
+        >
+
+        </button>
         {/* <button
           onClick={this.gantiWarnaBg}
         >
