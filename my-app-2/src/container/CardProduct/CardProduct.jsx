@@ -9,25 +9,11 @@ class CardProduct extends Component {
         return true
     }
 
-    handleCounterChange = (newValue) => {
-        this.props.onCounterChange(newValue)
-    }
-
     tambahOrder = () => {
-        this.setState({
-            order: this.state.order + 1
-        }, () => {
-            this.handleCounterChange(this.state.order)
-        })
+        this.handleCounterChange(this.props.order + 1)
     }
     kurangOrder = () => {
-        if (this.state.order > 0) {
-            this.setState({
-                order: this.state.order - 1
-            }, () => {
-                this.handleCounterChange(this.state.order)
-            })
-        }
+        this.handleCounterChange(this.props.order - 1)
     }
     render() {
         return (
