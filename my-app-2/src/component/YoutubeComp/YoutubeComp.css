@@ -3,6 +3,8 @@
     width: 212px;
     box-sizing: border-box;
     margin-right: 12px;
+    border: 1.25px solid rebeccapurple;
+    border-radius: 8px;
 }  
 .img-thumb {
     width: 100%;

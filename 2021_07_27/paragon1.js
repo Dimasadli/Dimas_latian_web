@@ -3,7 +3,7 @@ const names = ["Arief", "Suharsono", "Ega", "Rifqi", "Redha", "Hari", "Arief", "
 let set1 = new Set();
 let arr = []
 names.forEach(e => {
-    if(set1.has(e)) {
+    if (set1.has(e)) {
         arr.push(e)
     } else {
         set1.add(e)
@@ -11,3 +11,6 @@ names.forEach(e => {
 })
 
 console.log(arr)
+
+const array = [['H'], ['E'], ['Y'], [' '], ['J'], ['U'], ['D'], ['E']]
+console.log(array.join(''))
