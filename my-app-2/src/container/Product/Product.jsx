@@ -4,13 +4,14 @@ import CardProduct from '../CardProduct/CardProduct';
 
 class Product extends Component {
     state = {
-        order: 1,
+        order: 0,
     }
-
     handleCounterChange = (newValue) => {
-        this.setState({
-            order: newValue
-        })
+        if (newValue >= 0) {
+            this.setState({
+                order: newValue
+            })
+        }
     }
     shouldComponentUpdate(nextProps, nextState) {
         if (nextState.order >= 10) {
@@ -18,7 +19,6 @@ class Product extends Component {
         }
         return true
     }
-
     render() {
         return (
             <Fragment>

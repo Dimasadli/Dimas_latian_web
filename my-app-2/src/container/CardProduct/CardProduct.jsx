@@ -1,19 +1,11 @@
 import React, { Component } from 'react';
 
 class CardProduct extends Component {
-
-    shouldComponentUpdate(nextProps, nextState) {
-        if (nextState.order >= 10) {
-            return false
-        }
-        return true
-    }
-
     tambahOrder = () => {
-        this.handleCounterChange(this.props.order + 1)
+        this.props.onCounterChange(this.props.order + 1)
     }
     kurangOrder = () => {
-        this.handleCounterChange(this.props.order - 1)
+        this.props.onCounterChange(this.props.order - 1)
     }
     render() {
         return (
