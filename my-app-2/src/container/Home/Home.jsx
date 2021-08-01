@@ -1,38 +1,44 @@
-import React, { Component } from 'react';
-// import YoutubeComp from '../../component/YoutubeComp/YoutubeComp';
-import Product from '../Product/Product';
-// import LifeCycle from '../LifeCycle/LifeCycle';
-import BlogPost from '../BlogPost/BlogPost';
+//libraries
+import React, { Component, Fragment } from 'react';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    BrowserRouter
+} from "react-router-dom";
+
+//pages 
+import Product from '../pages/Product/Product';
+import LifeCycle from '../pages/LifeCycle/LifeCycle';
+import BlogPost from '../pages/BlogPost/BlogPost';
+import Tabel from '../pages/Tabel/Tabel';
+import YoutubeCompPage from '../pages/YoutubeCompPage/YoutubeCompPage';
+import DetailPost from '../pages/BlogPost/DetailPost/DetailPost';
+
+//style
+import './Home.css';
 
 class Home extends Component {
     render() {
         return (
-            <div>
-                {/* <p>Youtube Component</p>
-                <hr />
-                <YoutubeComp
-                    time="6:50"
-                    title='Kobe V'
-                    desc="di upload 2 hari yang lalu" />
-                <YoutubeComp
-                    time="11:50"
-                    title='Kobe VI'
-                    desc="di upload 3 hari yang lalu" />
-                <YoutubeComp
-                    time="23:20"
-                    title='Kobe VII'
-                    desc="di upload 10 hari yang lalu" />
-                <YoutubeComp /> */}
-                <p>Counter</p>
-                <hr />
-                <Product />
-                {/* <p>Life Cycle Component</p>
-                <hr />
-                <LifeCycle /> */}
-                {/* <p>Blog Post</p>
-                <hr />
-                <BlogPost /> */}
-            </div>
+            <Router>
+                <Fragment>
+                    <div className='nav justify-content-end navigasi' >
+                        <Link className='nav-link' to='/'>Blog Post</Link>
+                        <Link className='nav-link' to='/product'>Product</Link>
+                        <Link className='nav-link' to='/lifecycle'>LifeCycle</Link>
+                        <Link className='nav-link' to='/youtube'>Youtube</Link>
+                        <Link className='nav-link' to='/tabel'>Tabel</Link>
+                    </div>
+                    <Route path='/' exact component={BlogPost} />
+                    <Route path='/detail-post/:postID' component={DetailPost} />
+                    <Route path='/product' component={Product} />
+                    <Route path='/lifecycle' component={LifeCycle} />
+                    <Route path='/youtube' component={YoutubeCompPage} />
+                    <Route path='/tabel' component={Tabel} />
+                </Fragment>
+            </Router>
         );
     }
 }

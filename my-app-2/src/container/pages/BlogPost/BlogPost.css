@@ -34,8 +34,43 @@
     color: #3d4a6e;
     margin-bottom: 16px;
 }
+.content p.title:hover{
+    cursor: pointer;
+}
+
 .content p.desc {
     margin: 0px;
     font-size: 16px;
     color: #4a4a4a;
+}
+
+.btn{
+    margin-top: 15px;
+    font-size: 13px;
+}
+
+.form-add-post{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 400px;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+}
+
+.button-simpan{
+    width: 100px;
+}
+
+.tombol{
+    width: 100%;
+}
+
+.btn-dark{
+    margin-left: 13px;
 }

@@ -1,0 +1,43 @@
+.container{
+    max-width: 1000px;
+    position: relative;
+}
+.img-page{
+    position: relative;
+}
+.img-page img{
+    width: 55%;
+}
+
+.login-page{
+    position: absolute;
+    top: 30%;
+    right: 0;
+    background-color: #fff;
+    width: 60%;
+    padding: 32px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%)
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    padding: 6px 12px;
+}
+
+.login-form-label{
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.login-page-title{
+    font-family: 'Effra';
+    font-weight: bold;
+    font-size: 44px;
+    text-transform: uppercase;
+}
+
+.login-page-footer{
+    background-color: #f1f1f1;
+}
+
