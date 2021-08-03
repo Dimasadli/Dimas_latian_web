@@ -11,12 +11,12 @@
 .card-wrapper{
     width: 250px;
     height: 400px;
+    margin-bottom: 15px;
 }
 
 .card-wrapper p{
     font-size: 12px;
     font-weight: bold;
-    margin: 15px 0 12px;
 }
 
 .card-wrapper .add{
@@ -33,14 +33,13 @@
     padding: 5px 10px;
     font-weight: 600;
     text-transform: uppercase;
-    margin-top: 10px;
 }
 
 .title-wrapper{
     width: 250px;
     height: 30px;
     text-align: center;
-    margin: auto;
+    margin: 15px 0 20px 0;
 }
 
 .container.product-wrapper{

@@ -1,21 +1,46 @@
 import React, { Component } from 'react';
+import './Cart.css'
+import CartDetail from './CartDetail/CartDetail';
+import axios from 'axios';
 
 class Cart extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            totalOrder: {}
+        }
+    }
+    getCart = () => {
+        axios.get('https://paragon-training-api.herokuapp.com/cart').then(res => {
+            this.setState({
+                totalOrder: res.data
+            })
+        })
+    }
     render() {
         return (
             <div className="container">
-                <div className="card-title">
-                    <h1>Shoping Cart</h1>
+                <div className="cart-title">
+                    <h1>Shopping Cart</h1>
                 </div>
-                <div className="cart-detail">
-                    <img src="https://www.kahfeveryday.com/wp-content/uploads/2021/07/PDP-WFH-Kit-08-1100x1100.jpg" alt="" />
-                    <p>KAHF WFH KIT – TRUE BROTHERHOOD SERIES</p>
+                {
+                    this.state.totalOrder.map((el, id) => {
+                        return (
+                            <CartDetail
+                                key={id}
+                                data={el}
+                            />
+                        )
+                    })
+                }
+                <div id='go-back-shopping'>
+                    <p><span>&larr;</span> Go back to Shopping</p>
                 </div>
-                <div></div>
-
             </div>
         );
     }
 }
 
 export default Cart;
+
+// this.props.totalOrder

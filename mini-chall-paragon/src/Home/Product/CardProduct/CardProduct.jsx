@@ -5,7 +5,7 @@ class CardProduct extends Component {
         super(props);
     }
     handleClick = () => {
-        this.props.goCart(this.props.data.id)
+        this.props.goCart(this.props.data)
     }
     render() {
         return (
