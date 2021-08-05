@@ -7,10 +7,9 @@ class Main extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            email: '',
-            password: '',
             typePassword: 'password',
-            togglePassword: true
+            togglePassword: true,
+            isLogin: true
         }
     }
     togglePassword = () => {
@@ -27,6 +26,11 @@ class Main extends Component {
             })
         }
     }
+    onChangeLogin = () => {
+        this.setState({
+            isLogin: !this.state.isLogin
+        })
+    }
 
     render() {
         return (
@@ -34,11 +38,19 @@ class Main extends Component {
                 <div className='img-page'>
                     <img src="https://www.kahfeveryday.com/wp-content/uploads/2021/07/kahf_login.jpg" alt="" />
                 </div>
-                {/* <LoginPage /> */}
-                <SignUpPage
-                    typePassword={this.state.typePassword}
-                    togglePassword={this.togglePassword}
-                />
+                {
+                    this.state.isLogin ?
+                        <LoginPage
+                            onChangeLogin={this.onChangeLogin}
+                            typePassword={this.state.typePassword}
+                            togglePassword={this.togglePassword} />
+                        :
+                        <SignUpPage
+                            onChangeLogin={this.onChangeLogin}
+                            typePassword={this.state.typePassword}
+                            togglePassword={this.togglePassword}
+                        />
+                }
 
             </div>
         );

@@ -1,8 +1,4 @@
-.signup-form-input{
-    position: relative;
-}
-
-.signup-page{
+.login-page{
     position: absolute;
     top: 10%;
     right: 0;
@@ -12,7 +8,7 @@
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%)
 }
 
-.signup-form{
+.login-form{
     display: flex;
     flex-direction: column;
     padding: 6px 12px;
@@ -20,13 +16,13 @@
 }
 
 
-.signup-form-label{
+.login-form-label{
     font-size: 14px;
     font-weight: 900;  
     margin: 0 0 5px 18px;
 }
 
-.signup-form-input{
+.login-form-input{
     width: 92%;
     margin: 0 18px 22px;
     padding: 15px 20px;
@@ -36,9 +32,8 @@
     border: 1px solid #e1e1e1;
 }
 
-.signup-page-title{
+.login-page-title {
     font-family: 'Effra Heavy';
-    font-weight: bolder;
     font-size: 44px;
     text-transform: uppercase;
     width: 85%;
@@ -46,7 +41,7 @@
     text-align: left;
 }
 
-.signup-page-footer{
+.login-page-footer{
     font-size: 13px;
     text-align: center;
     margin-bottom: 0px;
@@ -55,12 +50,12 @@
     padding: 16px;
 }
 
-.signup-page-footer p{
+.login-page-footer p{
     margin: 0;
     padding: 0;
 }
 
-.signup-form-checkbox{
+.login-form-checkbox{
     margin: 0 18.5px 10px;
 }
 
@@ -68,36 +63,42 @@
     margin-right: 10px;
 }
 
-#already-singup{
-    text-align: center;
-    padding: 0;
-    margin: 0;
-    font-size: 13px;
-    font-family: "Arial";
-}
-
-.signup-page-header{
-    padding: 32px 32px 0;   
-}
-
-.signup-form img{
-    width: 24px;
-    height: 24px;
-    position: absolute;
-    top: 62%;
-    right: 14%;
-}
-
-.signup-form img:hover{
-    cursor: pointer;
-}
-
-.btn-signup{
+.btn-login{
     width: 92%;
-    margin: 10px 18px 50px;
+    margin: 0 18px 17px;
     padding: 15px 20px;
     text-transform: uppercase;
     font-size: 12px;
     font-family: 'Arial';
     color: #fff;
+}
+
+#forgot-password{
+    text-align: center;
+    padding: 0;
+    margin-bottom: 5em;
+    font-size: 13px;
+    color: #000000;
+}
+
+.login-page-header{
+    padding: 32px 32px 0;   
+}
+
+.login{
+    position: absolute;
+    top: 59%;
+    right: 15%;
+}
+
+.login-form img{
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 54%;
+    right: 14%;
+}
+
+.login-form img:hover{
+    cursor: pointer;
 }

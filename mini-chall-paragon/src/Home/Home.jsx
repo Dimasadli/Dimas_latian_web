@@ -3,13 +3,16 @@ import HeaderComp from './Header/HeaderComp/HeaderComp';
 import Product from './Product/Product';
 import Main from './Main/Main';
 import Cart from './Cart/Cart';
+import LandingPage from './LandingPage/LandingPage';
+//style
+import './LandingPage/LandingPage.css'
+import './Home.css'
+
+/// react-dom
 import axios from 'axios';
-import LandingPage from './LandingPage';
 import {
     BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
+    Route
 } from "react-router-dom";
 
 class Home extends Component {
@@ -22,6 +25,7 @@ class Home extends Component {
     componentDidMount() {
         this.getCart()
     }
+    /// get API untuk Cart
     getCart = () => {
         axios.get('https://paragon-training-api.herokuapp.com/cart').then(res => {
             this.setState({
@@ -37,10 +41,17 @@ class Home extends Component {
                         <HeaderComp
                             totalOrder={this.state.totalOrder} />
                     </div>
-                    <Route path='/' exact component={LandingPage}></Route>
-                    <Route path='/my-account' exact component={Main} />
-                    <Route path='/product' component={Product} />
-                    <Route path='/cart' component={Cart} />
+                    <Route path='/' exact ><LandingPage textPage='Home' /></Route>
+                    <Route path='/brand'><LandingPage textPage='Brand' /></Route>
+                    <Route path='/product'><Product
+                        getCart={this.getCart} />
+                    </Route>
+                    <Route path='/kahf-program'><LandingPage textPage='Kahf Program' /></Route>
+                    <Route path='/discovery'><LandingPage textPage='Discovery' /></Route>
+                    <Route path='/my-account' ><Main /></Route>
+                    <Route path='/cart'><Cart
+                        totalOrder={this.state.totalOrder} />
+                    </Route>
                 </Fragment>
             </Router>
         );
@@ -53,8 +64,8 @@ export default Home;
     //     <HeaderComp
     //         totalOrder={this.state.totalOrder} />
     //     {/* <Product
-    //         getCart={this.getCart} /> */}
+    //         /> */}
     //     {/* <Main /> */}
     //     <Cart
-    //         totalOrder={this.state.totalOrder} />
+    //          />
     // </div>

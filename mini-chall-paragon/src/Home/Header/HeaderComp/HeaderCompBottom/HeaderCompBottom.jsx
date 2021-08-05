@@ -5,6 +5,7 @@ import {
     Route,
     Link
 } from "react-router-dom";
+import { VscSearch } from "react-icons/vsc";
 
 class HeaderCompBottom extends Component {
     render() {
@@ -16,13 +17,13 @@ class HeaderCompBottom extends Component {
                 <div className="header-bottom-link">
                     <Link className='link' to='/'>Home</Link>
                     <Link className='link' to='/product'>Shop</Link>
-                    <Link className='link' >Brand</Link>
-                    <Link className='link' >Kahf Program</Link>
-                    <Link className='link' >Discovery</Link>
-                    <hr />
+                    <Link className='link' to='/brand'>Brand</Link>
+                    <Link className='link' to='/kahf-program'>Kahf Program</Link>
+                    <Link className='link' to='/discovery'>Discovery</Link>
                 </div>
-                <div>
-                    <input className='form-control search' type="text" name="" id="" placeholder='Type to search' />
+                <div className='search'>
+                    <input className='form-control' type="text" name="" id="" placeholder='Type to search' />
+                    <span><VscSearch /></span>
                 </div>
             </div>
         );

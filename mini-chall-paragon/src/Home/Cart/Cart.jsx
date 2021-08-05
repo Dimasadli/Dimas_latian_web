@@ -1,21 +1,16 @@
 import React, { Component } from 'react';
 import './Cart.css'
 import CartDetail from './CartDetail/CartDetail';
-import axios from 'axios';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
 
 class Cart extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            totalOrder: {}
-        }
-    }
-    getCart = () => {
-        axios.get('https://paragon-training-api.herokuapp.com/cart').then(res => {
-            this.setState({
-                totalOrder: res.data
-            })
-        })
     }
     render() {
         return (
@@ -24,7 +19,7 @@ class Cart extends Component {
                     <h1>Shopping Cart</h1>
                 </div>
                 {
-                    this.state.totalOrder.map((el, id) => {
+                    this.props.totalOrder.map((el, id) => {
                         return (
                             <CartDetail
                                 key={id}
@@ -33,8 +28,8 @@ class Cart extends Component {
                         )
                     })
                 }
-                <div id='go-back-shopping'>
-                    <p><span>&larr;</span> Go back to Shopping</p>
+                <div className='go-back-shopping'>
+                    <p><Link className='go-back-shopping' to='/product'><span>&larr;</span> Go back to Shopping</Link></p>
                 </div>
             </div>
         );

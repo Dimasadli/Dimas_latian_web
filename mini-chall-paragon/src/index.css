@@ -1,8 +1,7 @@
 @font-face {
-  font-family: "Effra";
-  src: local("Effra"),
+  font-family: "Effra Heavy";
+  src: local("Effra Heavy"),
   url("./font/Effra/Effra_Std_He.ttf") format("truetype");
-  font-weight: bold;
 }
 body {
   margin: 0;

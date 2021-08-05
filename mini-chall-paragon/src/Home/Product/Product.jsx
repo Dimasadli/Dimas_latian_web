@@ -11,8 +11,7 @@ class Product extends Component {
         super(props);
         this.state = {
             post: [],
-            orderEval: {},
-            totalOrder: {}
+            orderEval: {}
         }
     }
     handleClick = (value) => {
@@ -21,17 +20,10 @@ class Product extends Component {
         }, this.postDataToAPI
         )
     }
-    getCart = () => {
-        axios.get('https://paragon-training-api.herokuapp.com/cart').then(res => {
-            this.setState({
-                totalOrder: res.data
-            })
-        })
-    }
     postDataToAPI = () => {
         axios.post('https://paragon-training-api.herokuapp.com/cart', this.state.orderEval)
             .then((res) => {
-                this.getCart()
+                this.props.getCart()
             }, (err) => {
                 console.log('errornya: ', err)
             })
@@ -45,7 +37,6 @@ class Product extends Component {
         })
     }
     render() {
-        console.log(this.state.orderEval)
         return (
             <div className="container product-wrapper">
                 {
