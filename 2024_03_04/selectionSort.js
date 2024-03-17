@@ -7,6 +7,9 @@
 // - if smallest !== new smallest, swap it
 // - return array
 
+/// Time Complexity O(n**2) worst case
+/// Time Complexity O(n) best case
+
 function selectionSort(arr) {
   for (let i = 0; i < arr.length; i++) {
     let lowest = i;

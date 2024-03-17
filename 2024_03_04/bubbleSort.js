@@ -7,8 +7,8 @@
 // swap if j+1 < j
 // return array
 
-/// time Complexity O(n^2) worst case
-/// time Complexity O(n) best case
+/// Time Complexity O(n**2) worst case
+/// Time Complexity O(n) best case
 
 function bubbleSort(arr) {
   for (let i = arr.length; i > 0; i--) {
