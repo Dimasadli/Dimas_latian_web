@@ -70,3 +70,27 @@ function naiveSearch(long, short) {
 console.log(naiveSearch("lorie loled", "ri"));
 
 console.log(binarySearch([2, 5, 6, 9, 13, 15, 28, 30], 30));
+
+function abbreviation(long, short) {
+  let r = 0;
+
+  long = long.split(" ");
+
+  for (let i = 0; i < long.length; i++) {
+    for (let j = 0; j < long[i].length; j++) {
+      const str = long[i][j];
+      if (r <= short.length - 1) {
+        if (str.toLowerCase() !== short[r].toLowerCase()) break;
+        if (str.toLowerCase() === short[r].toLowerCase()) {
+          r++;
+        }
+      }
+    }
+  }
+
+  return r === short.length;
+}
+
+console.log(abbreviation("Britain Exit", "Brexit"));
+console.log(abbreviation("Bumi Serpong Damai", "BSD"));
+console.log(abbreviation("Chessy Burioos", "Chetoos"));
