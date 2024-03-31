@@ -23,96 +23,6 @@ var twoSum = function (numbers, target) {
 console.log(twoSum([2, 7, 11, 15], 22));
 console.log(twoSum([2, 3, 4], 6));
 
-/// Sliding Window
-
-var maxProfit = function (prices) {
-  let total = 0;
-  let l = 0;
-  let r = 1;
-
-  while (l < prices.length && r < prices.length) {
-    const prev = prices[l];
-    const curr = prices[r];
-
-    if (prev < curr) {
-      if (curr - prev > total) {
-        total = curr - prev;
-      }
-    } else {
-      l = r;
-    }
-    r++;
-  }
-  return total;
-};
-
-console.log(maxProfit([7, 1, 5, 3, 6, 4]));
-console.log(maxProfit([7, 6, 4, 3, 1]));
-
-/// Sliding Window Method
-var lengthOfLongestSubstring = function (str) {
-  if (str.length === 1) {
-    return 1;
-  }
-
-  const hash = {};
-  let tempMax = 0;
-  let start = 0;
-  let end = 0;
-
-  while (end < str.length) {
-    const el = str[end];
-
-    if (hash[el] >= 0) {
-      start = Math.max(start, hash[el] + 1);
-    }
-
-    tempMax = Math.max(tempMax, end - start + 1);
-
-    hash[el] = end;
-    end++;
-  }
-
-  return tempMax;
-};
-
-console.log(lengthOfLongestSubstring("abba"));
-console.log(lengthOfLongestSubstring("pwwkew"));
-console.log(lengthOfLongestSubstring("abcabcdd"));
-
-function minSubArrayLen(nums, sum) {
-  let total = 0;
-  let start = 0;
-  let end = 0;
-  let minLen = Infinity;
-
-  while (start < nums.length) {
-    // if current window doesn't add up to the given sum then
-    // move the window to right
-    if (total < sum && end < nums.length) {
-      total += nums[end];
-      end++;
-    }
-    // if current window adds up to at least the sum given then
-    // we can shrink the window
-    else if (total >= sum) {
-      minLen = Math.min(minLen, end - start);
-      total -= nums[start];
-      start++;
-    }
-    // current total less than required total but we reach the end, need this or else we'll be in an infinite loop
-    else {
-      break;
-    }
-  }
-
-  return minLen === Infinity ? 0 : minLen;
-}
-
-console.log(minSubArrayLen([3, 1, 7, 11, 2, 9, 8, 21, 62, 33, 19]));
-console.log(minSubArrayLen([2, 1, 6, 5, 4]));
-console.log(minSubArrayLen([1, 4, 16, 22, 5, 7, 8, 9, 10]));
-
 /// Array
 
 var productExceptSelf = function (nums) {
@@ -191,3 +101,39 @@ function equalizeArray(arr) {
 
 console.log(equalizeArray([3, 3, 2, 1, 3]));
 console.log(equalizeArray([1, 2, 3, 1, 2, 3, 3, 3]));
+
+var groupThePeople = function (groupSizes) {
+  const groups = {};
+  const result = [];
+
+  for (let i = 0; i < groupSizes.length; i++) {
+    const size = groupSizes[i];
+    if (!groups[size]) {
+      groups[size] = [];
+    }
+    groups[size].push(i);
+
+    if (groups[size].length === size) {
+      result.push(groups[size]);
+      groups[size] = [];
+    }
+  }
+
+  return result;
+};
+
+console.log(groupThePeople([2, 1, 3, 3, 3, 2]));
+console.log(groupThePeople([3, 3, 3, 3, 3, 1, 3]));
+
+var numberGame = function (nums) {
+  nums = nums.sort((a, b) => a - b);
+
+  for (let i = 0; i < nums.length; i += 2) {
+    [nums[i], nums[i + 1]] = [nums[i + 1], nums[i]];
+  }
+
+  return nums;
+};
+
+console.log(numberGame([5, 4, 2, 3]));
+console.log(numberGame([2, 5]));
